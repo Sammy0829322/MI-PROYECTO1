@@ -1,0 +1,96 @@
+/* 1. CONTENEDOR PRINCIPAL: Flota arriba a la derecha */
+.menu-container {
+  position: absolute; /* Lo saca del flujo normal para flotar */
+  top: 25px;
+  right: 25px;
+  z-index: 1000; /* Asegura que esté encima de todo */
+  
+  display: flex;
+  flex-direction: column; /* Apila el botón y la lista */
+  align-items: flex-end;  /* Alinea todo a la derecha */
+}
+
+/* 2. EL BOTÓN "MENÚ" (Disparador) */
+.menu-toggle {
+  background-color: #0c4c8c; /* Azul oscuro del tema */
+  color: #fff;
+  border: 2px solid #124370;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.2s ease;
+  min-width: 100px; /* Ancho mínimo para que no baile al cambiar texto */
+}
+
+.menu-toggle:hover {
+  background-color: #1a5fa0;
+  transform: translateY(-2px);
+}
+
+/* Estilo cuando está abierto (opcional, para diferenciar) */
+.menu-toggle.open {
+  background-color: #082d53;
+  border-color: #4a90e2;
+}
+
+/* 3. LA CAJA DESPLEGABLE (Lista de opciones) */
+.menu-dropdown {
+  margin-top: 10px; /* Espacio entre el botón y la lista */
+  background-color: #082d53; /* Fondo muy oscuro */
+  border: 2px solid #124370;
+  border-radius: 10px;
+  overflow: hidden; /* Recorta las esquinas de los hijos */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  
+  display: flex;
+  flex-direction: column; /* Lista vertical */
+  min-width: 140px;
+  
+  /* Animación de entrada */
+  animation: slideDown 0.2s ease-out;
+}
+
+/* 4. LOS ÍTEMS DE LA LISTA */
+.menu-item {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #124370; /* Línea divisoria */
+  color: #b0c4de;
+  padding: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+  width: 100%;
+}
+
+.menu-item:last-child {
+  border-bottom: none; /* Quitamos la línea al último */
+}
+
+.menu-item:hover {
+  background-color: #1a5fa0;
+  color: white;
+}
+
+/* Estado Activo (La página que estás viendo) */
+.menu-item.active {
+  background-color: #d6e4ff;
+  color: #054190;
+  font-weight: bold;
+}
+
+/* 5. ANIMACIÓN SUAVE */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

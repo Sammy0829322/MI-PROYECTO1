@@ -1,0 +1,46 @@
+/* Direccion.css */
+.boton-3d {
+  /* Forma base redonda y centrada */
+  width: 100px;  /* Ancho fijo para que sea redondo */
+  height: 100px; /* Alto igual al ancho */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Tipografía y reset */
+  font-size: 38px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  margin: 10px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent; /* Elimina el flash azul en móviles */
+
+  /* EL EFECTO 3D (Estado normal) */
+  /* Un gradiente sutil para que parezca esférico */
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  /* Dos sombras: una para la "altura" (el borde sólido gris) y otra para la sombra difusa */
+  box-shadow: 
+    0 6px 0 #999999,  /* Sombra sólida que da la sensación de grosor */
+    0 8px 15px rgba(0,0,0,0.2); /* Sombra difusa */
+  
+  /* Transición suave para el efecto de presionar */
+  transition: all 0.1s ease-out;
+  position: relative;
+  top: 0;
+}
+
+/* EL EFECTO PRESIONADO (:active) */
+.boton-3d:active {
+  /* Cambiamos el fondo un poco más oscuro */
+  background: #dcdcdc;
+  /* Reducimos la sombra sólida para que parezca que se hundió */
+  box-shadow: 
+    0 2px 0 #666666,
+    inset 0 2px 5px rgba(0,0,0,0.2); /* Sombra interna para profundidad */
+  /* Movemos el botón físicamente hacia abajo */
+  top: 4px; 
+}
