@@ -3,7 +3,7 @@ import React from 'react';
 import './Direccion.css'; 
 
 export default function Direccion({ label, message, send }) {
-  const mensajeParo = { tipo: "motor", comando: "paro" };
+  const mensajeParo = { tipo: "servo", accion: "stop" };
 
   return (
     <button

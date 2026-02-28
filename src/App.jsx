@@ -35,8 +35,8 @@ export default function App() {
             <div className="control-pad">
               <h1 className="panel-title">Control Botones</h1>
               {/* Nota: El orden visual lo controla el CSS Grid */}
-              <Direccion label="▲" message={{ tipo:"motor", comando:"adelante" }} send={send} />
-              <Direccion label="▼" message={{ tipo:"motor", comando:"atras" }} send={send} />
+              <Direccion label="▲" message={{ tipo:"servo", accion:"subir" }} send={send} />
+              <Direccion label="▼" message={{ tipo:"servo", accion:"bajar" }} send={send} />
               <Direccion label="◄" message={{ tipo:"motor", comando:"izquierda" }} send={send} />
               <Direccion label="►" message={{ tipo:"motor", comando:"derecha" }} send={send} />
             </div>
