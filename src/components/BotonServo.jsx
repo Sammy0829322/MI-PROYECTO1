@@ -2,7 +2,8 @@ import React from 'react';
 import './BotonServo.css';
 
 export default function BotonServo({ label, message, send }) {
-  const mensajeParo = { tipo: "servo", accion: "stop" };
+  // Determinar el mensaje de paro según el tipo de servo
+  const mensajeParo = { tipo: message.tipo, accion: "stop" };
 
   return (
     <button
